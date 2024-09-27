@@ -1,0 +1,11 @@
+int ledPin = 12;
+int delayTime = 2000;
+voidsetup() {
+pinMode(ledPin,OUTPUT);
+}
+voidloop() {
+digitalWrite(ledPin, HIGH);
+delay(delayTime);
+digitalWrite(ledPin, LOW);
+delay(delayTime);
+}
