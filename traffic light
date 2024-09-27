@@ -1,0 +1,44 @@
+
+int ledPinRed = 2;
+int ledPinYellow = 1;
+int ledPinGreen = 0;
+voidsetup() {
+
+pinMode(ledPinRed, OUTPUT);
+pinMode(ledPinYellow, OUTPUT);
+pinMode(ledPinGreen, OUTPUT);
+//Turn OFF all the LEDs
+digitalWrite(ledPinRed, LOW);
+digitalWrite(ledPinYellow, LOW);
+digitalWrite(ledPinGreen, LOW);
+}
+voidloop() {
+
+changeLedState(ledPinRed, 3000);
+changeLedState(ledPinYellow, 1000);
+changeLedState(ledPinGreen, 3000);
+}
+voidchangeLedState(int ledPin, int duration){
+
+
+if(ledPin == ledPinRed){
+digitalWrite(ledPinRed, HIGH);
+digitalWrite(ledPinYellow, LOW);
+digitalWrite(ledPinGreen, LOW);
+}
+elseif(ledPin == ledPinYellow){
+digitalWrite(ledPinRed, LOW);
+digitalWrite(ledPinYellow, HIGH);
+digitalWrite(ledPinGreen, LOW);
+}
+elseif(ledPin == ledPinGreen){
+digitalWrite(ledPinRed, LOW);
+digitalWrite(ledPinYellow, LOW);
+digitalWrite(ledPinGreen, HIGH);
+}
+else{
+digitalWrite(ledPinRed, LOW);
+digitalWrite(ledPinYellow, LOW);
+digitalWrite(ledPinGreen, LOW);
+}
+delay(duration);
